@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>腾讯云翻译助手 - 设置</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="options-container">
+    <div class="options-header">
+      <h1>腾讯云翻译助手设置</h1>
+      <p class="subtitle">配置您的翻译API以开始使用</p>
+    </div>
+
+    <div class="options-section">
+      <h2>API 密钥配置</h2>
+      <div class="form-group">
+        <label for="secretId">SecretId</label>
+        <input type="text" id="secretId" placeholder="请输入腾讯云SecretId">
+        <span class="hint">在腾讯云控制台 → 访问管理 → API密钥管理 中获取</span>
+      </div>
+      <div class="form-group">
+        <label for="secretKey">SecretKey</label>
+        <input type="password" id="secretKey" placeholder="请输入腾讯云SecretKey">
+        <span class="hint">请妥善保管，不要泄露给他人</span>
+      </div>
+    </div>
+
+    <div class="options-section">
+      <h2>翻译设置</h2>
+      <div class="form-group">
+        <label for="sourceLang">源语言</label>
+        <select id="sourceLang">
+          <option value="auto">自动识别</option>
+          <option value="zh">简体中文</option>
+          <option value="zh-TW">繁体中文</option>
+          <option value="en">英语</option>
+          <option value="ja">日语</option>
+          <option value="ko">韩语</option>
+          <option value="fr">法语</option>
+          <option value="es">西班牙语</option>
+          <option value="it">意大利语</option>
+          <option value="de">德语</option>
+          <option value="tr">土耳其语</option>
+          <option value="ru">俄语</option>
+          <option value="pt">葡萄牙语</option>
+          <option value="vi">越南语</option>
+          <option value="id">印尼语</option>
+          <option value="th">泰语</option>
+          <option value="ms">马来语</option>
+          <option value="ar">阿拉伯语</option>
+          <option value="hi">印地语</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="targetLang">目标语言</label>
+        <select id="targetLang">
+          <option value="zh">简体中文</option>
+          <option value="zh-TW">繁体中文</option>
+          <option value="en">英语</option>
+          <option value="ja">日语</option>
+          <option value="ko">韩语</option>
+          <option value="fr">法语</option>
+          <option value="es">西班牙语</option>
+          <option value="it">意大利语</option>
+          <option value="de">德语</option>
+          <option value="tr">土耳其语</option>
+          <option value="ru">俄语</option>
+          <option value="pt">葡萄牙语</option>
+          <option value="vi">越南语</option>
+          <option value="id">印尼语</option>
+          <option value="th">泰语</option>
+          <option value="ms">马来语</option>
+          <option value="ar">阿拉伯语</option>
+          <option value="hi">印地语</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="options-section">
+      <h2>术语库设置</h2>
+      <div class="form-group">
+        <label for="termRepoIds">术语库ID列表</label>
+        <textarea id="termRepoIds" rows="3" placeholder="每行一个术语库ID，例如：&#10;144aed********fc7321d4&#10;b77f64********6d88df30"></textarea>
+        <span class="hint">在腾讯云控制台 → 机器翻译 → 术语库中创建并获取ID。留空则不使用术语库。</span>
+      </div>
+      <div class="form-group">
+        <a href="https://console.cloud.tencent.com/tmt/term_bank" target="_blank" class="link-btn">前往管理术语库 →</a>
+      </div>
+    </div>
+
+    <div class="options-section">
+      <h2>外观设置</h2>
+      <div class="form-group">
+        <label>主题颜色</label>
+        <div class="color-picker-group">
+          <input type="color" id="themeColor" value="#006eff">
+          <input type="text" id="themeColorHex" class="color-hex" value="#006eff" maxlength="7">
+        </div>
+        <div class="color-presets" id="colorPresets">
+          <div class="color-preset" style="background:#006eff" data-color="#006eff"></div>
+          <div class="color-preset" style="background:#10b981" data-color="#10b981"></div>
+          <div class="color-preset" style="background:#f59e0b" data-color="#f59e0b"></div>
+          <div class="color-preset" style="background:#ef4444" data-color="#ef4444"></div>
+          <div class="color-preset" style="background:#8b5cf6" data-color="#8b5cf6"></div>
+          <div class="color-preset" style="background:#ec4899" data-color="#ec4899"></div>
+          <div class="color-preset" style="background:#06b6d4" data-color="#06b6d4"></div>
+          <div class="color-preset" style="background:#64748b" data-color="#64748b"></div>
+        </div>
+        <span class="hint">选择翻译弹窗和按钮的主题颜色</span>
+      </div>
+    </div>
+
+    <div class="options-section">
+      <h2>功能设置</h2>
+      <div class="form-group checkbox-group">
+        <label>
+          <input type="checkbox" id="enabled" checked>
+          启用选中翻译功能
+        </label>
+        <span class="hint">开启后，选中文本将自动显示翻译浮窗</span>
+      </div>
+      <div class="form-group checkbox-group">
+        <label>
+          <input type="checkbox" id="showOriginal" checked>
+          弹窗中显示原文
+        </label>
+        <span class="hint">开启后，翻译弹窗会同时显示选中的原文</span>
+      </div>
+    </div>
+
+    <div class="options-actions">
+      <button id="saveBtn" class="btn btn-primary">保存设置</button>
+      <button id="testBtn" class="btn btn-secondary">测试翻译</button>
+    </div>
+
+    <div id="message" class="message"></div>
+
+    <div class="options-section help-section">
+      <h2>使用帮助</h2>
+      <div class="help-content">
+        <h3>如何获取API密钥？</h3>
+        <ol>
+          <li>访问 <a href="https://cloud.tencent.com/" target="_blank">腾讯云官网</a> 并注册账号</li>
+          <li>完成实名认证</li>
+          <li>在控制台搜索"机器翻译"并开通服务</li>
+          <li>前往"访问管理" → "API密钥管理"</li>
+          <li>点击"新建密钥"获取SecretId和SecretKey</li>
+        </ol>
+        <h3>如何使用术语库？</h3>
+        <ol>
+          <li>前往 <a href="https://console.cloud.tencent.com/tmt/term_bank" target="_blank">术语库管理页面</a></li>
+          <li>创建术语库，设置语言方向</li>
+          <li>添加术语（支持单条添加或批量导入）</li>
+          <li>复制术语库ID到上方配置中</li>
+        </ol>
+        <h3>弹窗操作</h3>
+        <ul>
+          <li>拖动弹窗顶部可移动位置</li>
+          <li>点击弹窗外区域或关闭按钮关闭弹窗</li>
+        </ul>
+        <h3>免费额度</h3>
+        <p>腾讯云机器翻译每月提供500万字符的免费翻译额度，对于个人用户完全够用。</p>
+      </div>
+    </div>
+  </div>
+  <script src="options.js"></script>
+</body>
+</html>
